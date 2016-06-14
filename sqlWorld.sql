@@ -28,4 +28,19 @@ SELECT name,
 	WHEN continent = 'Caribbean' THEN 'America'
 	ELSE continent END
 FROM world
-WHERE name LIKE 'A%' OR  name LIKE 'B%
+WHERE name LIKE 'A%' OR  name LIKE 'B%'
+
+-- 13)Put the continents right Oceania becomes Australasia
+-- Countries in Eurasia and Turkey go to Europe/Asia
+-- Caribbean islands starting with 'B' go to North America, other Caribbean islands go to South America
+-- Order by country name in ascending order
+
+SELECT name, continent, 
+	CASE WHEN continent = 'Oceania' THEN 'Australasia'
+	WHEN continent = 'Eurasia' THEN 'Europe/Asia'
+	WHEN continent = 'Turkey' THEN 'Europe/Asia'
+	WHEN continent = 'Caribbean' AND name LIKE 'B%' THEN 'North America'
+	WHEN continent = 'Caribbean' AND name NOT LIKE 'B%' THEN 'South America'
+	ELSE continent END
+FROM world
+ORDER BY name

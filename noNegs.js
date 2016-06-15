@@ -18,10 +18,9 @@ function noNegs(arr){
 				arr[j] = arr[j+1];
 				arr[j+1] = temp;
 			}
-			
 		} 
-		
 	}
+
 	//Remove all the negatives at the end of array
 	while (count>0){
 		arr.pop();
@@ -32,4 +31,4 @@ function noNegs(arr){
 
 //Testing
 var array =[-1,3,-5,9,10,4];
-noNegs(array);
+console.log(noNegs(array));

@@ -1,10 +1,10 @@
 /*
-    Split the Address of a website into its protocol, domain, and context subsections
+    Split the URL of a website into its protocol, domain, and context subsections
     Assumption: You are given a string
     Return: Array
 */
 
-function splitAddress(url) {
+function splitURL(url) {
     var arr =[];
 
     // Patterns needed to match

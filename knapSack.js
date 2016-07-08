@@ -31,9 +31,14 @@ function upToN(items,capacity,currentSize,combo){
 // if I don't make a copy 
 var a = [[1,3],[1,2],[3,4]];
 var num = 7;
-upToN(a, num, 0, []);
 
+upToN(a, num, 0, []);
+console.log(all);
+
+// Find the highest value
 var highest = 0;
+var highestIdx = 0;
+
 // Tell me the values of the combos
 for (var j = 0; j < all.length; j++){
 	var sum = 0;
@@ -43,6 +48,7 @@ for (var j = 0; j < all.length; j++){
 	}
 	if(sum > highest){
 		highest = sum;
+		highestIdx = j;
 	}
 }
-console.log(highest);
+console.log(highest, all[highestIdx]);

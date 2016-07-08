@@ -32,13 +32,17 @@ function upToN(items,capacity,currentSize,combo){
 var a = [[1,3],[1,2],[3,4]];
 var num = 7;
 upToN(a, num, 0, []);
-console.log(all);
 
-// Tell me the sizes of the combos
+var highest = 0;
+// Tell me the values of the combos
 for (var j = 0; j < all.length; j++){
 	var sum = 0;
+	
 	for (var k = 0; k<all[j].length; k++){
-		sum += all[j][k][1];
+		sum += all[j][k][0];
 	}
-	console.log(sum);
+	if(sum > highest){
+		highest = sum;
+	}
 }
+console.log(highest);

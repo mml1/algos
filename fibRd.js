@@ -39,3 +39,4 @@ function fib(n){
 //Testing
 console.log(fib(4));
 console.log(calculated)
+//Big O is O(n) when initially calculated and then O(1) due to it being stored in object

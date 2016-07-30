@@ -6,12 +6,18 @@
 */
 
 function factors(integer){
+	// profiling function
+	console.time("Found factors in")
+
 	var listOfFactors = [];
 	for(var i = 0; i < integer; i++){
 		if(integer%i === 0){
 			listOfFactors.push(i);
 		}
 	}
+
+	// profiling function
+	console.timeEnd("Found factors in")
 	return listOfFactors;
 }
 
@@ -24,4 +30,4 @@ console.log(factors(num));
 	Operations depend on the integer given.
 */
 
-// Need to profile code
+// Need to try different nums to see how fast my code is running

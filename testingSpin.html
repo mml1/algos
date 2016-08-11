@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function spiralIn(array){
+			var len = array.length;
+			var combined = [];
+			// if it is even than can go backwards
+			// in the second row
+			if(len%2 == 0){
+				// alternate going forward or backwards
+				for(var i = 0; i < array.length; i++){
+					if(i%2 == 0){
+						for(var k = 0; k< array[i].length; k++){
+							combined.push(array[i][k]);
+						}
+					} else {
+						for(var j = array[i].length-1; j >= 0; j--){
+							combined.push(array[i][j]);
+						}
+					}
+				}
+				return combined;
+
+			} else {
+				
+				//add items for the first row
+				for(var i = 0; i < array[0].length; i++){
+					console.log("in row", array[0])
+					combined.push(array[0][i]);
+				}
+
+				//add middle element in the second row
+				combined.push(array[1][array.length-1]);
+
+				//add last row
+				//last item in the initial array, add items backwards
+				for(var j = array[2].length-1; j>=0; j--){
+					combined.push(array[2][j]);
+				}
+				//add remaining rows
+				combined.push(array[1][0]);
+				combined.push(array[1][1]);
+
+				return combined;
+			}
+		}
+		var spin = [[1,2,3],[8,9,4],[7,6,5]];
+		var spin2 = [[1,2,3,4],[8,7,6,5]]
+		console.log(spiralIn(spin))
+		console.log(spiralIn(spin2))
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
